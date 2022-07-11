@@ -23,3 +23,9 @@ export function buildStreak(
     ...overrideDefaults,
   };
 }
+
+export function updateStreak(storage: Storage, streak: Streak): void {
+  storage.setItem(KEY, JSON.stringify(streak));
+}
+
+export const KEY = "streak";
