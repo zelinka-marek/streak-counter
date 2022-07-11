@@ -20,7 +20,7 @@
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "prettier": {},
   "bugs": {
@@ -30,6 +30,7 @@
   "devDependencies": {
     "@types/jest": "^28.1.4",
     "@types/jsdom": "^16.2.14",
+    "cross-env": "^7.0.3",
     "jest": "^28.1.2",
     "jsdom": "^20.0.0",
     "microbundle": "^0.15.0",
