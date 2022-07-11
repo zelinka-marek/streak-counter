@@ -10,6 +10,8 @@ npm install @mzelinka17/streak-counter
 
 ## Usage
 
+[![View Demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/streak-counter-ts-course-forked-ih3fiz?fontsize=14&hidenavigation=1&theme=dark)
+
 ```typescript
 import { streakCounter } from "@mzelinka17/streak-counter";
 
