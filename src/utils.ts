@@ -8,6 +8,13 @@ export function formattedDate(date: Date): string {
   return date.toLocaleDateString("en-us");
 }
 
+export function differenceInDays(dateLeft: Date, dateRight: Date): number {
+  const diffTime = Math.abs(dateLeft.getTime() - dateRight.getTime());
+  const differenceInDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  return differenceInDays;
+}
+
 export function buildStreak(
   date: Date,
   overrideDefaults?: Partial<Streak>

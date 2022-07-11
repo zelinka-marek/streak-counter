@@ -122,6 +122,20 @@ describe("streakCounter", () => {
       expect(streakUpdated.currentCount).toBe(1);
     });
 
+    it("should reset if days are consecutive but in different year or month", () => {
+      const date = new Date("12/13/2021");
+      const streak = streakCounter(mockLocalStorage, date);
+
+      expect(streak.currentCount).toBe(2);
+
+      // It should not increment because this is two months after
+      // the streak started and the days aren't consecutive.
+      const dateUpdated = new Date("2/14/2022");
+      const streakUpdated = streakCounter(mockLocalStorage, dateUpdated);
+
+      expect(streakUpdated.currentCount).toBe(1);
+    });
+
     it("should save the reset streak to localStorage", () => {
       const key = "streak";
       const date = new Date("12/13/2021");

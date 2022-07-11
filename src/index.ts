@@ -1,5 +1,11 @@
 import type { Streak } from "./utils";
-import { buildStreak, formattedDate, KEY, updateStreak } from "./utils";
+import {
+  buildStreak,
+  differenceInDays,
+  formattedDate,
+  KEY,
+  updateStreak,
+} from "./utils";
 
 function shouldIncrementOrResetStreakCount(
   currentDate: Date,
@@ -7,8 +13,7 @@ function shouldIncrementOrResetStreakCount(
 ): "increment" | "reset" | "none" {
   // We get 11/5/2021
   // so to get 5, we split on / and get the second item
-  const difference =
-    currentDate.getDate() - parseInt(lastLoginDate.split("/")[1]);
+  const difference = differenceInDays(currentDate, new Date(lastLoginDate));
   // Same-day login, do nothing
   if (difference === 0) {
     return "none";
