@@ -1,19 +1,28 @@
 {
-  "name": "streak-counter",
-  "version": "1.0.0",
-  "description": "This is a basic streak counter - inspired by Duolingo - written in TypeScript and meant for the browser (uses `localstorage`).",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "prettier": {},
+  "name": "@mzelinka17/streak-counter",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zelinka-marek/streak-counter.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Marek Zelinka <mzelinka17@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "source": "src/index.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "prettier": {},
   "bugs": {
     "url": "https://github.com/zelinka-marek/streak-counter/issues"
   },
@@ -23,6 +32,7 @@
     "@types/jsdom": "^16.2.14",
     "jest": "^28.1.2",
     "jsdom": "^20.0.0",
+    "microbundle": "^0.15.0",
     "prettier": "^2.7.1",
     "ts-jest": "^28.0.5",
     "typescript": "^4.7.4"
