@@ -17,6 +17,7 @@ function shouldIncrementOrResetStreakCount(
   if (difference === 1) {
     return "increment";
   }
+
   // Otherwise they logged in after a day, which would
   // break the streak
   return "reset";
@@ -42,12 +43,15 @@ export function streakCounter(storage: Storage, date: Date): Streak {
         });
         // store in localStorage
         updateStreak(storage, updatedStreak);
+
         return updatedStreak;
       }
+
       if (SHOULD_RESET) {
         const updatedStreak = buildStreak(date);
         // store in localStorage
         updateStreak(storage, updatedStreak);
+
         return updatedStreak;
       }
 

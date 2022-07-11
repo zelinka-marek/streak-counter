@@ -130,7 +130,7 @@ describe("streakCounter", () => {
 
       // Skip a day and break the streak
       const dateUpdated = new Date("12/15/2021");
-      const streakUpdated = streakCounter(mockLocalStorage, dateUpdated);
+      const _streakUpdated = streakCounter(mockLocalStorage, dateUpdated);
 
       const streakAsString = mockLocalStorage.getItem(key);
       // Normally you should wrap in try/catch in case the JSON is bad
